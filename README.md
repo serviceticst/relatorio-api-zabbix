@@ -1,5 +1,5 @@
 ## <img src="https://flagcdn.com/w40/br.png" width="40">  🧩 Imagem docker com relatório do [Zabbix](https://www.zabbix.com) via API.
-- Escolha um diretório dentro do seu servidor, crier ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) o arquivo `.docker-compose.yml` conforme modelo abaixo. Se preferir, altere a porta 8000 de acordo a sua necessidade.
+### 1. Escolha um diretório dentro do seu servidor, crier ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) o arquivo `docker-compose.yml` conforme modelo abaixo. Se preferir, altere a porta 8000 de acordo a sua necessidade.
 
 ```yaml
 services:
@@ -38,9 +38,9 @@ services:
       retries: 5
 
 ```
+---
 
-**Crie, no mesmo diretório do projeto, um arquivo chamado `.env` e ajuste as variáveis abaixo conforme o seu ambiente:**
-
+### 2. Crie ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) no mesmo diretório o arquivo `.env` e ajuste as variáveis abaixo conforme o seu ambiente:
 
 ```env
 APP_USER=seu_usuario
@@ -48,7 +48,25 @@ APP_PASS=sua_senha
 ZABBIX_URL=https://zabbix.exemplo.com
 ZABBIX_TOKEN=seu_token_aqui
 ```
+#### ⚠️ Atenção aos comentário no arquivo `.env`!
+---
 
+### 3. Para gerar um token, acesse a interface web do zabbix e siga o passo a passo abaixo:
+
+
+<img width="232" height="111" alt="image" src="https://github.com/user-attachments/assets/0f00cea7-3223-414c-beca-7eba3e63717f" />
+
+---
+<img width="1910" height="570" alt="image" src="https://github.com/user-attachments/assets/b03a2fb8-7a82-41cd-8b91-3f14a3698c19" />
+
+---
+<img width="683" height="316" alt="image" src="https://github.com/user-attachments/assets/7f4da26d-27d8-4d2f-b65c-fc8a4abe9555" />
+
+---
+<img width="791" height="329" alt="image" src="https://github.com/user-attachments/assets/11ca0209-4c9b-4ea2-bf3c-81576af5364a" />
+
+#### ⚠️ Observação: Salve esse token antes de fechar a tela.
+---
 
 ```env
 ############################################
@@ -115,30 +133,26 @@ NGINX_ACCESS_LOG=/dev/stdout
 # - /dev/stderr  (recomendado: aparece em docker logs)
 # - /var/log/nginx/error.log (em arquivo, se montar volume)
 NGINX_ERROR_LOG=/dev/stderr
-
-
 ```
+---
 
-http://ip_do_seu_servidor/glpi
-http://ip_do_seu_servidor/glpiteste
-
-### 📌 Recomendações finais
-
-- Renomeie as pastas `install`
+### 4. Dentro do  diretório, suba o contêiner com o comando abaixo: 
 
 ```bash
-mv /usr/share/glpi/install/ /usr/share/glpi/install_ori
-mv /usr/share/glpiteste/install/ /usr/share/glpiteste/install_ori
+docker compose up -d
 ```
+---
+### 5. Acesse pelo navegador
 
-- Descomente as linhas 28 e 34 dos arquivos /etc/httpd/conf.d/glpi.conf e /etc/httpd/conf.d/glpiteste.conf e reinicie o apache (httpd) 
+- http://IP_DO_SERVIDOR:8000
 
-- Altere a senha e remova/desative os 03 usuários abaixo
-normal
-post-only
-tech
+- Logue com o usuário e senha definido nas variaveis
+```env
+APP_USER=seu_usuario
+APP_PASS=sua_senha
+```
+⋯⋯⋯
 
-- Reinicie o servidor
 
 ### ▶️ Passo a Passo
 - Para assistir ao tutorial completo:
@@ -148,8 +162,9 @@ tech
 - [Clique aqui](https://github.com/serviceticst/glpi/releases/download/10.0.0/GLPI_10_ORACLE_LINUX_8.sh) 
 
 ### ⚙️Funcionalidades
-- Instalação do GLPI automatizada
-- Base de produção e homologação 
+- Relatório pratico do zabbix
+- Exportação em PDF
+
 
 ***
 
