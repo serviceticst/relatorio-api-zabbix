@@ -1,5 +1,5 @@
 ## <img src="https://flagcdn.com/w40/br.png" width="40">  🧩 Imagem docker com relatório do [Zabbix](https://www.zabbix.com) via API.
-### 1. Escolha um diretório dentro do seu servidor, crie ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) o arquivo `docker-compose.yml` conforme modelo abaixo. Se preferir, altere a porta 8000 de acordo com a sua necessidade.
+### 1. Escolha um diretório dentro do seu servidor, crie ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/docker-compose.yml) o arquivo `docker-compose.yml` conforme modelo abaixo. Se preferir, altere a porta 8000 de acordo com a sua necessidade.
 
 ```yaml
 services:
@@ -40,7 +40,7 @@ services:
 ```
 ---
 
-### 2. Crie ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) no mesmo diretório o arquivo `.env` e ajuste as variáveis abaixo conforme o seu ambiente:
+### 2. Crie ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/.env) no mesmo diretório o arquivo `.env` e ajuste as variáveis abaixo conforme o seu ambiente:
 
 ```env
 APP_USER=seu_usuario
@@ -158,8 +158,11 @@ APP_PASS=sua_senha
 - Para assistir ao tutorial completo:
 [Clique aqui](https://www.youtube.com/watch?v=G-NSQNW7GyU)
 
-### 📥 Download
-- [Clique aqui](https://github.com/serviceticst/relatorio-api-zabbix) 
+### 📥 Download Compose
+- [Clique aqui](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/docker-compose.yml) 
+
+### 📥 Download env
+- [Clique aqui](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/.env) 
 
 ### ⚙️ Funcionalidades
 - Relatório prático do zabbix
