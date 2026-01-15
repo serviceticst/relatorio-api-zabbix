@@ -73,7 +73,7 @@ ZABBIX_TOKEN=seu_token_aqui
 # Login da aplicação 
 ############################################
 APP_USER=admin
-APP_PASS=admin123
+APP_PASS=admin
 
 ############################################
 # Zabbix (API)
@@ -145,7 +145,6 @@ docker compose up -d
 ### 4. Acesse pelo navegador
 
 - http://IP_DO_SERVIDOR:8000
-
 - Logue com o usuário e senha definido nas variáveis
 ```env
 APP_USER=seu_usuario
@@ -247,7 +246,7 @@ ZABBIX_TOKEN=your_token_here
 # Application login
 ############################################
 APP_USER=admin
-APP_PASS=admin123
+APP_PASS=admin
 
 ############################################
 # Zabbix (API)
@@ -308,12 +307,6 @@ NGINX_ACCESS_LOG=/dev/stdout
 # - /dev/stderr  (recommended: visible in docker logs)
 # - /var/log/nginx/error.log (file, if you mount a volume)
 NGINX_ERROR_LOG=/dev/stderr
-
-
-### 4. Inside the project directory, start the container:
-
-```bash
-docker compose up -d
 ```
 
 ---
@@ -327,7 +320,6 @@ docker compose up -d
 ### 4. Access via browser
 
 - http://SERVER_IP:8000
-
 - Log in using the credentials defined in `.env`
 
 ---
