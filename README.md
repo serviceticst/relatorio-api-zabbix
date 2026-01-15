@@ -1,5 +1,5 @@
 ## <img src="https://flagcdn.com/w40/br.png" width="40">  🧩 Imagem docker com relatório do [Zabbix](https://www.zabbix.com) via API.
-### 1. Escolha um diretório dentro do seu servidor, crier ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) o arquivo `docker-compose.yml` conforme modelo abaixo. Se preferir, altere a porta 8000 de acordo a sua necessidade.
+### 1. Escolha um diretório dentro do seu servidor, crie ou [baixe](https://github.com/serviceticst/relatorio-api-zabbix) o arquivo `docker-compose.yml` conforme modelo abaixo. Se preferir, altere a porta 8000 de acordo com a sua necessidade.
 
 ```yaml
 services:
@@ -48,7 +48,7 @@ APP_PASS=sua_senha
 ZABBIX_URL=https://zabbix.exemplo.com
 ZABBIX_TOKEN=seu_token_aqui
 ```
-#### ⚠️ Atenção aos comentário no arquivo `.env`!
+#### ⚠️ Atenção aos comentários no arquivo `.env`!
 ---
 
 ### 3. Para gerar um token, acesse a interface web do zabbix e siga o passo a passo abaixo:
@@ -136,7 +136,7 @@ NGINX_ERROR_LOG=/dev/stderr
 ```
 ---
 
-### 4. Dentro do  diretório, suba o contêiner com o comando abaixo: 
+### 4. Dentro do diretório, suba o contêiner com o comando abaixo: 
 
 ```bash
 docker compose up -d
@@ -146,23 +146,24 @@ docker compose up -d
 
 - http://IP_DO_SERVIDOR:8000
 
-- Logue com o usuário e senha definido nas variaveis
+- Logue com o usuário e senha definido nas variáveis
 ```env
 APP_USER=seu_usuario
 APP_PASS=sua_senha
 ```
-⋯⋯⋯
+
+- - - - - - - -
 
 
 ### ▶️ Passo a Passo
 - Para assistir ao tutorial completo:
 [Clique aqui](https://www.youtube.com/watch?v=G-NSQNW7GyU)
 
-### 📥Download
+### 📥 Download
 - [Clique aqui](https://github.com/serviceticst/glpi/releases/download/10.0.0/GLPI_10_ORACLE_LINUX_8.sh) 
 
-### ⚙️Funcionalidades
-- Relatório pratico do zabbix
+### ⚙️ Funcionalidades
+- Relatório prático do zabbix
 - Exportação em PDF
 
 
