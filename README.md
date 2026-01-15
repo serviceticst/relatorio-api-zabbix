@@ -51,7 +51,7 @@ ZABBIX_TOKEN=seu_token_aqui
 #### ⚠️ Atenção aos comentários no arquivo `.env`!
 ---
 
-### 3. Para gerar um token, acesse a interface web do zabbix e siga o passo a passo abaixo:
+#### Para gerar um token, acesse a interface web do zabbix e siga o passo a passo abaixo:
 
 
 <img width="232" height="111" alt="image" src="https://github.com/user-attachments/assets/0f00cea7-3223-414c-beca-7eba3e63717f" />
@@ -136,13 +136,13 @@ NGINX_ERROR_LOG=/dev/stderr
 ```
 ---
 
-### 4. Dentro do diretório, suba o contêiner com o comando abaixo: 
+### 3. Dentro do diretório, suba o contêiner com o comando abaixo: 
 
 ```bash
 docker compose up -d
 ```
 ---
-### 5. Acesse pelo navegador
+### 4. Acesse pelo navegador
 
 - http://IP_DO_SERVIDOR:8000
 
@@ -226,7 +226,7 @@ ZABBIX_TOKEN=your_token_here
 
 ---
 
-### 3. To generate a token, access the Zabbix web interface and follow the steps.
+#### To generate a token, access the Zabbix web interface and follow the steps.
 
 <img width="232" height="111" alt="image" src="https://github.com/user-attachments/assets/0f00cea7-3223-414c-beca-7eba3e63717f" />
 
@@ -242,6 +242,73 @@ ZABBIX_TOKEN=your_token_here
 ⚠️ Note: save this token before closing the screen.
 
 ---
+```env
+############################################
+# Application login
+############################################
+APP_USER=admin
+APP_PASS=admin123
+
+############################################
+# Zabbix (API)
+# Tip: you can use the base URL (https://...),
+# the backend automatically appends /api_jsonrpc.php
+############################################
+ZABBIX_URL=https://YOUR_ZABBIX_ADDRESS
+ZABBIX_TOKEN=PASTE_YOUR_TOKEN_HERE
+
+# Timeout (seconds) for Zabbix API calls (via proxy)
+ZABBIX_TIMEOUT=15
+
+############################################
+# APPLICATION LOGS (PHP)
+#
+# LOG_LEVEL: controls the log "verbosity" of the application
+# Options: debug | info | warn | error
+# - debug: everything (use only for troubleshooting)
+# - info : normal (recommended for production)
+# - warn : only warnings/errors (quieter)
+# - error: only critical errors
+############################################
+LOG_LEVEL=info
+
+# LOG_TO_STDOUT: send logs to stdout/stderr (docker logs)
+# Options: 1 (yes) | 0 (no)
+# Recommended: 1
+LOG_TO_STDOUT=1
+
+# LOG_FILE: write logs to a file inside the container.
+# Options:
+# - empty (disable file logging): LOG_FILE=
+# - path (e.g.: /var/log/app/app.log)
+# Note: to persist logs, mount volume ./logs:/var/log/app
+LOG_FILE=/var/log/app/app.log
+
+############################################
+# NGINX LOGS (web server)
+#
+# NGINX_ERROR_LOG_LEVEL:
+# Common options: debug | info | notice | warn | error | crit | alert | emerg
+# Recommended: warn
+# - debug: VERY verbose (use temporarily)
+# - warn : good for production
+# - error: quieter
+############################################
+NGINX_ERROR_LOG_LEVEL=warn
+
+# NGINX_ACCESS_LOG:
+# Options:
+# - /dev/stdout  (recommended: visible in docker logs)
+# - off          (disable access log)
+# - /var/log/nginx/access.log (file, if you mount a volume)
+NGINX_ACCESS_LOG=/dev/stdout
+
+# NGINX_ERROR_LOG:
+# Options:
+# - /dev/stderr  (recommended: visible in docker logs)
+# - /var/log/nginx/error.log (file, if you mount a volume)
+NGINX_ERROR_LOG=/dev/stderr
+
 
 ### 4. Inside the project directory, start the container:
 
@@ -251,7 +318,13 @@ docker compose up -d
 
 ---
 
-### 5. Access via browser
+### 3. Inside the project directory, start the container with the command below:
+
+```bash
+docker compose up -d
+```
+
+### 4. Access via browser
 
 - http://SERVER_IP:8000
 
