@@ -72,8 +72,8 @@ ZABBIX_TOKEN=seu_token_aqui
 ############################################
 # Login da aplicação 
 ############################################
-APP_USER=admin
-APP_PASS=admin
+APP_USER=SEU_USUÁRIO 
+APP_PASS=SUA_SENHA
 
 ############################################
 # Zabbix (API)
@@ -245,8 +245,8 @@ ZABBIX_TOKEN=your_token_here
 ############################################
 # Application login
 ############################################
-APP_USER=admin
-APP_PASS=admin
+APP_USER=YOUR_USERNAME
+APP_PASS=YOUR_PASSWORD
 
 ############################################
 # Zabbix (API)
