@@ -159,7 +159,7 @@ APP_PASS=sua_senha
 [Clique aqui](https://www.youtube.com/watch?v=G-NSQNW7GyU)
 
 ### 📥 Download
-- [Clique aqui](https://github.com/serviceticst/glpi/releases/download/10.0.0/GLPI_10_ORACLE_LINUX_8.sh) 
+- [Clique aqui](https://github.com/serviceticst/relatorio-api-zabbix) 
 
 ### ⚙️ Funcionalidades
 - Relatório prático do zabbix
@@ -326,6 +326,9 @@ docker compose up -d
 
 ### ▶️ Step-by-step video
 https://www.youtube.com/watch?v=G-NSQNW7GyU
+
+### 📥 Download
+- [Click here](https://github.com/serviceticst/relatorio-api-zabbix) 
 
 ### ⚙️ Features
 - Zabbix report generation
