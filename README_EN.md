@@ -1,6 +1,6 @@
 ## <img src="https://flagcdn.com/w40/us.png" width="40">  🧩 Docker Image with Zabbix Report via API
 
-### 1. Choose a directory on your server and create or download the `docker-compose.yml` file according to the example below.
+### 1. Choose a directory on your server and create or [download](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/docker-compose.yml) the `docker-compose.yml` file according to the example below.
 If needed, change port `8000` to suit your environment.
 
 ```yaml
@@ -42,7 +42,7 @@ services:
 
 ---
 
-### 2. Create the `.env` file in the same directory and adjust the variables according to your environment:
+### 2. Create or [download](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/.env) the .env file in the same directory and adjust the variables below according to your environment.:
 
 ```env
 APP_USER=your_user
@@ -157,8 +157,11 @@ docker compose up -d
 ### ▶️ Step-by-step video
 https://www.youtube.com/watch?v=G-NSQNW7GyU
 
-### 📥 Download
-- [Click here](https://github.com/serviceticst/relatorio-api-zabbix) 
+### 📥 Download Compose
+- [Click here](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/docker-compose.yml) 
+
+### 📥 Download env
+- [Click here](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/.env) 
 
 ### ⚙️ Features
 - Zabbix report generation
