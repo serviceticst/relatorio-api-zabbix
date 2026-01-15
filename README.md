@@ -228,6 +228,17 @@ ZABBIX_TOKEN=your_token_here
 
 ### 3. To generate a token, access the Zabbix web interface and follow the steps.
 
+<img width="232" height="111" alt="image" src="https://github.com/user-attachments/assets/0f00cea7-3223-414c-beca-7eba3e63717f" />
+
+---
+<img width="1910" height="570" alt="image" src="https://github.com/user-attachments/assets/b03a2fb8-7a82-41cd-8b91-3f14a3698c19" />
+
+---
+<img width="683" height="316" alt="image" src="https://github.com/user-attachments/assets/7f4da26d-27d8-4d2f-b65c-fc8a4abe9555" />
+
+---
+<img width="791" height="329" alt="image" src="https://github.com/user-attachments/assets/11ca0209-4c9b-4ea2-bf3c-81576af5364a" />
+
 ⚠️ Note: save this token before closing the screen.
 
 ---
