@@ -169,52 +169,91 @@ APP_PASS=sua_senha
 
 ***
 
-## <img src="https://flagcdn.com/w40/us.png" width="40"> 🧩 Automated [GLPI](https://glpi-project.org/pt-br) Installation on Oracle Linux 8
+## <img src="https://flagcdn.com/w40/us.png" width="40">  🧩 Docker Image with Zabbix Report via API
 
-- Access the server via SSH, download and run the script with the command below:
+### 1. Choose a directory on your server and create or download the `docker-compose.yml` file according to the example below.
+If needed, change port `8000` to suit your environment.
 
-```bash
-cd /tmp
-wget https://github.com/serviceticst/glpi/blob/main/GLPI_10_ORACLE_LINUX_8.sh
-chmod +x GLPI_10_ORACLE_LINUX_8.sh && ./GLPI_10_ORACLE_LINUX_8.sh
-````
+```yaml
+services:
+  zabbix-report:
+    image: ghcr.io/serviceticst/relatorio-api-zabbix:1.0.0
+    container_name: zabbix-report
+    ports:
+      - "8000:80"
+    environment:
+      # Application login
+      APP_USER: "${APP_USER}"
+      APP_PASS: "${APP_PASS}"
 
-* Complete the installation through the browser:
+      # Zabbix
+      ZABBIX_URL: "${ZABBIX_URL}"
+      ZABBIX_TOKEN: "${ZABBIX_TOKEN}"
+      ZABBIX_TIMEOUT: "${ZABBIX_TIMEOUT}"
 
-http\://your\_server\_ip/glpi
-http\://your\_server\_ip/glpiteste
+      # Application logs (PHP)
+      LOG_LEVEL: "${LOG_LEVEL}"
+      LOG_TO_STDOUT: "${LOG_TO_STDOUT}"
+      LOG_FILE: "${LOG_FILE}"
 
-### 📌 Final Recommendations
+      # Nginx logs
+      NGINX_ERROR_LOG_LEVEL: "${NGINX_ERROR_LOG_LEVEL}"
+      NGINX_ACCESS_LOG: "${NGINX_ACCESS_LOG}"
+      NGINX_ERROR_LOG: "${NGINX_ERROR_LOG}"
 
-* Rename the `install` folders:
-
-```bash
-mv /usr/share/glpi/install/ /usr/share/glpi/install_ori
-mv /usr/share/glpiteste/install/ /usr/share/glpiteste/install_ori
+    volumes:
+      - ./logs:/var/log/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost/healthz || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
 ```
 
-* Uncomment lines 28 and 34 in the files `/etc/httpd/conf.d/glpi.conf` and `/etc/httpd/conf.d/glpiteste.conf`, then restart Apache (httpd)
+---
 
-* Change the password and remove/disable the following 3 users:
-  normal
-  post-only
-  tech
+### 2. Create the `.env` file in the same directory and adjust the variables according to your environment:
 
-* Reboot the server
+```env
+APP_USER=your_user
+APP_PASS=your_password
+ZABBIX_URL=https://zabbix.example.com
+ZABBIX_TOKEN=your_token_here
+```
 
-### ▶️ Step-by-Step Guide
+⚠️ Pay attention to the comments inside the `.env` file.
 
-* To watch the full tutorial:
-  [Click here](https://www.youtube.com/watch?v=G-NSQNW7GyU)
+---
 
-### 📥 Download
+### 3. To generate a token, access the Zabbix web interface and follow the steps.
 
-* [Click here](https://github.com/serviceticst/glpi/releases/download/10.0.0/GLPI_10_ORACLE_LINUX_8.sh)
+⚠️ Note: save this token before closing the screen.
+
+---
+
+### 4. Inside the project directory, start the container:
+
+```bash
+docker compose up -d
+```
+
+---
+
+### 5. Access via browser
+
+- http://SERVER_IP:8000
+
+- Log in using the credentials defined in `.env`
+
+---
+
+### ▶️ Step-by-step video
+https://www.youtube.com/watch?v=G-NSQNW7GyU
 
 ### ⚙️ Features
-
-* Automated GLPI installation
-* Production and testing environments
+- Zabbix report generation
+- PDF export
 
 ***
 
