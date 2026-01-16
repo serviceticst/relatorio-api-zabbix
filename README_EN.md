@@ -164,7 +164,7 @@ docker compose up -d
 ---
 
 ### ▶️ Step-by-step video
-https://youtu.be/8o_qFfKaGAM
+- [Click here](https://youtu.be/8o_qFfKaGAM)
 
 ### 📥 Download Compose
 - [Click here](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/docker-compose.yml) 
