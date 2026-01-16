@@ -151,6 +151,13 @@ APP_USER=seu_usuario
 APP_PASS=sua_senha
 ```
 
+### 5. Imagens dos relatório:
+
+<img width="1914" height="927" alt="image" src="https://github.com/user-attachments/assets/03680a39-a09c-4b96-9b10-4b3cc9bb89e2" />
+
+---
+<img width="1899" height="1075" alt="rela" src="https://github.com/user-attachments/assets/3727d3b6-a695-4ac6-951e-ccf783943424" />
+
 - - - - - - - -
 
 
