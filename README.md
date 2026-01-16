@@ -163,7 +163,7 @@ APP_PASS=sua_senha
 
 ### ▶️ Passo a Passo
 - Para assistir ao tutorial completo:
-[Clique aqui](https://www.youtube.com/watch?v=G-NSQNW7GyU)
+[Clique aqui](https://youtu.be/8o_qFfKaGAM)
 
 ### 📥 Download Compose
 - [Clique aqui](https://github.com/serviceticst/relatorio-api-zabbix/blob/main/docker-compose.yml) 
